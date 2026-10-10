@@ -1,0 +1,48 @@
+{
+  "name": "dsh-symlink-passthrough",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open symlinks and junctions in the DSH sidebar, with targets outside the workspace gated by workspace trust · 让 DSH 侧边栏能展开、打开符号链接（含 Windows junction），指向工作区外的需工作区已信任",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "symlink",
+    "junction",
+    "workspace"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "test": "node test/selftest.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-typert-protocol": ">=0.2.0-rc.2 <0.3.0-0",
+    "dsh-workspace-trust": ">=0.1.0 <0.2.0"
+  },
+  "peerDependenciesMeta": {
+    "dsh-workspace-trust": {
+      "optional": true
+    }
+  }
+}

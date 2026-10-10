@@ -1,0 +1,6 @@
+# Bundle layer contributed by dsh-symlink-passthrough.
+# Inserts one Host-only plugin row; no config is required. Trust and the denied
+# list are configured in dsh-workspace-trust.
+- insert:
+    - id: symlink-passthrough
+      name: 'dsh-symlink-passthrough'
